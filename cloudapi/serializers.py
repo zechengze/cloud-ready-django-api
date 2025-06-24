@@ -4,7 +4,7 @@ from .models import FileUpload, ContactEmail
 class FileUploadSerializer(serializers.ModelSerializer):
     class Meta:
         model = FileUpload
-        fields = ['id', 'file', 'description', 'uploaded_at']
+        fields = '__all__'
 
 class ContactEmailSerializer(serializers.ModelSerializer):
     class Meta:

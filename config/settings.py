@@ -18,6 +18,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'cloudapi',
+    'drf_yasg',
 ]
 
 # middleware 中間件（含 admin、session 等必要元件）
