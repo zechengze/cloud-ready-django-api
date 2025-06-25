@@ -80,3 +80,15 @@ REST_FRAMEWORK = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header',
+            'description': "`Bearer <access token>`",
+        }
+    },
+    'USE_SESSION_AUTH': False,  # 關閉 Django session 認證，避免出現 Basic Auth
+}

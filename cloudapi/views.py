@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, viewsets
+from rest_framework.permissions import IsAuthenticated
 from .models import FileUpload, ContactEmail
 from .serializers import FileUploadSerializer, ContactEmailSerializer
 from drf_yasg.utils import swagger_auto_schema
@@ -25,6 +26,7 @@ class ContactEmailView(APIView):
 class FileUploadViewSet(viewsets.ModelViewSet):
     queryset = FileUpload.objects.all()
     serializer_class = FileUploadSerializer
+    permission_classes = [IsAuthenticated]
 
     @swagger_auto_schema(
         operation_description="取得所有檔案上傳紀錄",
